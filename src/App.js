@@ -1,7 +1,13 @@
+import React from "react";
 import "./App.css";
+import TimerScreen from "./screens/TimerScreen";
 
-function App() {
-  return <div className="App">Clock</div>;
-}
+const App = () => {
+  return (
+    <div className="App">
+      <TimerScreen></TimerScreen>
+    </div>
+  );
+};
 
 export default App;
