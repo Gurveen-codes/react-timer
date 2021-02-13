@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
 import TimerScreen from "./screens/TimerScreen";
 
 const App = () => {
   return (
-    <div className="App">
-      <TimerScreen></TimerScreen>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Route to="/" component={TimerScreen}></Route>
+      </div>
+    </BrowserRouter>
   );
 };
 

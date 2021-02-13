@@ -10,7 +10,7 @@ const TimerScreen = () => {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    if (milSec > 10) {
+    if (milSec > 100) {
       setSec((prevSec) => prevSec + 1);
       setMilSec(0);
     }
@@ -27,7 +27,7 @@ const TimerScreen = () => {
   const start = () => {
     let id = setInterval(() => {
       setMilSec((prevMilSec) => prevMilSec + 1);
-    }, 100);
+    }, 10);
     setIntervalId(id);
   };
 
