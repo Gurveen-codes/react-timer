@@ -5,15 +5,18 @@ import { HistoryContext } from "../App";
 const HistoryScreen = () => {
   const { historyArr } = useContext(HistoryContext);
   return (
-    <div>
-      <button>
-        <Link to="/">Go Back</Link>
-      </button>
+    <div className="history">
+      <h2>Timer History</h2>
+
+      <Link to="/">
+        <button>Go Back</button>
+      </Link>
+
       <ul>
         {historyArr.map((el, i) => (
-          <ul key={i}>
+          <li key={i}>
             {el.hour} : {el.min} : {el.sec} : {el.milSec}
-          </ul>
+          </li>
         ))}
       </ul>
     </div>

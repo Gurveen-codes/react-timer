@@ -59,14 +59,15 @@ const TimerScreen = () => {
     setHour(0);
   };
   return (
-    <div className="App">
+    <div className="timer">
       <Clock ms={milSec} sec={sec} min={min} hour={hour}></Clock>
       <button onClick={start}>Start</button>
       <button onClick={stop}>Stop</button>
       <button onClick={reset}>Reset</button>
-      <button>
-        <Link to="/history">History</Link>
-      </button>
+
+      <Link to="/history">
+        <button>History</button>
+      </Link>
     </div>
   );
 };
