@@ -18,11 +18,11 @@ const TimerScreen = () => {
       setSec((prevSec) => prevSec + 1);
       setMilSec(0);
     }
-    if (sec > 10) {
+    if (sec > 60) {
       setMin((prevMin) => prevMin + 1);
       setSec(0);
     }
-    if (min > 10) {
+    if (min > 60) {
       setHour((prevHr) => prevHr + 1);
       setMin(0);
     }
