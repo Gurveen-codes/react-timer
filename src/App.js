@@ -4,10 +4,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import TimerScreen from "./screens/TimerScreen";
 import HistoryScreen from "./screens/HistoryScreen";
 
+//Global context to share history state
 export const HistoryContext = React.createContext();
 
 const App = () => {
+  //Initial history state
   const [historyArr, setHistoryArr] = useState([]);
+
   return (
     <BrowserRouter>
       <div className="App">
