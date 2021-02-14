@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { HistoryContext } from "../App";
 import Clock from "../components/Clock";
 
 const TimerScreen = () => {
+  const { setHistoryArr } = useContext(HistoryContext);
+
   const [hour, setHour] = useState(0);
   const [min, setMin] = useState(0);
   const [sec, setSec] = useState(0);
   const [milSec, setMilSec] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [running, setRunning] = useState(false);
-  const [history, setHistory] = useState([]);
 
   useEffect(() => {
     if (milSec > 100) {
@@ -44,7 +46,7 @@ const TimerScreen = () => {
     setRunning(false);
     clearInterval(intervalId);
     let time = { hour, min, sec, milSec };
-    setHistory((prevHistory) => [...prevHistory, time]);
+    setHistoryArr((prevHistory) => [...prevHistory, time]);
   };
 
   ////////Reset////////
@@ -65,15 +67,6 @@ const TimerScreen = () => {
       <button>
         <Link to="/history">History</Link>
       </button>
-      <div>
-        <ul>
-          {history.map((el, i) => (
-            <ul key={i}>
-              {el.hour} : {el.min} : {el.sec} : {el.milSec}
-            </ul>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
